@@ -1,3 +1,45 @@
+<?php
+    if(isset($_POST['submit']))
+    {
+        /*print_r('Nome: ' . $_POST['nome']); 
+        print('<br>');
+        print_r('Senha: ' . $_POST['senha']); 
+        print('<br>');
+        print_r('E-mail: ' . $_POST['email']);
+        print('<br>');
+        print_r('Telefone: ' . $_POST['telefone']);
+        print('<br>');
+        print_r('Genero: ' . $_POST['genero']);
+        print('<br>');
+        print_r('Nascimento: ' . $_POST['nascimento']);
+        print('<br>');
+        print_r('Cidade: ' . $_POST['cidade']);
+        print('<br>');
+        print_r('Estado: ' . $_POST['estado']);
+        print('<br>');
+        print_r('Endereço: ' . $_POST['endereco']);
+        print('<br>');*/
+    
+        include_once('config.php');
+
+        $nome = $_POST['nome'];
+        $senha = $_POST['senha'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $genero = $_POST['genero'];
+        $nascimento = $_POST['nascimento'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $endereco = $_POST['endereco'];
+
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,genero, nascimento,cidade,estado,endereco) VALUES ('$nome','$senha','$email','$telefone','$genero','$nascimento','$cidade','$estado','$endereco')");
+
+        header('Location: login.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,8 +47,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
+        body {
+            color: white;
+            background: gray;
+            height: 100vh;
+            width: 100vw;
+        }
         .box{
-            width: 50%;
+            width: 30%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -16,8 +65,9 @@
     <title>Cadastro</title>
 </head>
 <body>
+    <a href="home.php">voltar</a>
     <div class="box">
-        <form action="cadastro.html" method="post">
+        <form action="cadastro.php" method="post">
             <fieldset>
                 <legend>
                     <strong>Formulario</strong>
@@ -78,7 +128,7 @@
                 </div>
                 <br>
 
-                <input type="submit" value="enviar">
+                <input type="submit" name="submit" id="submit" value="enviar">
                 <input type="reset" value="limpar">
 
 

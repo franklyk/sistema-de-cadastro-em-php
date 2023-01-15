@@ -20,6 +20,11 @@
             text-align: center;
             transform: translate(-50%,-50%);
         }
+        button{
+            font-size: 1.1em;
+            height: 40px;
+            width: 100px;
+        }
         
     </style>
     <title>Home</title>
@@ -29,8 +34,8 @@
     <div class="home">
         <h1>Home</h1>
         <br>
-        <input type="submit" class="entrar" value="entrar"><br><br>
-        <input type="submit" class="cadastrar" value="cadastrar">
+        <button><a href="login.php">Login</a></button><br><br>
+        <button><a href="cadastro.php">Cadastro</a></button>
     </div>
 </body>
 </html>

@@ -26,18 +26,19 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="login">
-        <h1>Login</h1>
-        <input type="text" name="email" id="email" placeholder="E-mail">
-        <br><br>
-
-        <input type="password" class="senha" id="senha"
-        placeholder="Senha">
+    <a href="home.php">voltar</a>
+    <form action="testelogin.php" method="post" >
+        <div class="login">
+            <h1>Login</h1>
+            <input type="text" name="email" placeholder="E-mail">
+            <br><br>
+            <input type="password" name="senha"
+            placeholder="Senha">
         
-        <br><br>
-
-        <input type="submit" value="Entrar">
-        <input type="reset" value="limpar">
-    </div>
+            <br><br>
+            <input type="submit" name="submit" value="Entrar">
+            <input type="reset" name="submit"  value="Limpar">
+        </div>
+    </form>
 </body>
 </html>
